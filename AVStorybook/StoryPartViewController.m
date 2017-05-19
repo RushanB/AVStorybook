@@ -35,13 +35,5 @@
     [super didReceiveMemoryWarning];
 
 }
-- (IBAction)recordButton:(UIButton *)sender {
-    
-}
-
-
-- (IBAction)playButton:(UIButton *)sender {
-}
-
 
 @end
