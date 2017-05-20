@@ -14,6 +14,7 @@
 		31921EB91ECF7DF80017CC22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31921EB71ECF7DF80017CC22 /* LaunchScreen.storyboard */; };
 		31921EC21ECF7E2F0017CC22 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 31921EC11ECF7E2F0017CC22 /* Model.m */; };
 		31921EC51ECF829F0017CC22 /* StoryPartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31921EC41ECF829F0017CC22 /* StoryPartViewController.m */; };
+		31921EC81ED0D4E40017CC22 /* MyPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31921EC71ED0D4E40017CC22 /* MyPageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		31921EC11ECF7E2F0017CC22 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
 		31921EC31ECF829F0017CC22 /* StoryPartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryPartViewController.h; sourceTree = "<group>"; };
 		31921EC41ECF829F0017CC22 /* StoryPartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryPartViewController.m; sourceTree = "<group>"; };
+		31921EC61ED0D4E40017CC22 /* MyPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPageViewController.h; sourceTree = "<group>"; };
+		31921EC71ED0D4E40017CC22 /* MyPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +68,8 @@
 				31921EAD1ECF7DF80017CC22 /* AppDelegate.m */,
 				31921EC01ECF7E2F0017CC22 /* Model.h */,
 				31921EC11ECF7E2F0017CC22 /* Model.m */,
+				31921EC61ED0D4E40017CC22 /* MyPageViewController.h */,
+				31921EC71ED0D4E40017CC22 /* MyPageViewController.m */,
 				31921EC31ECF829F0017CC22 /* StoryPartViewController.h */,
 				31921EC41ECF829F0017CC22 /* StoryPartViewController.m */,
 				31921EB21ECF7DF80017CC22 /* Main.storyboard */,
@@ -155,6 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31921EC81ED0D4E40017CC22 /* MyPageViewController.m in Sources */,
 				31921EAE1ECF7DF80017CC22 /* AppDelegate.m in Sources */,
 				31921EAB1ECF7DF80017CC22 /* main.m in Sources */,
 				31921EC21ECF7E2F0017CC22 /* Model.m in Sources */,
@@ -315,6 +321,7 @@
 				31921EBF1ECF7DF80017CC22 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

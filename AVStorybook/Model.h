@@ -12,10 +12,13 @@
 
 @interface Model : NSObject
 
-@property (nonatomic) UIImage *anImage;
-@property (nonatomic, assign) int pageIndex;
-@property (nonatomic) NSURL *audioURL;
+-(instancetype)initWith:(int)page;
 
--(instancetype)initWithIndex:(int)index;
+-(void)setAudioFilePath:(NSURL *)audioFilePath;
+-(void)setImageFilePath:(NSURL *)imageFilePath;
+-(int)getPage;
+
+-(NSURL *)getAudioFilePath;
+-(NSURL *)getImageFilePath;
 
 @end

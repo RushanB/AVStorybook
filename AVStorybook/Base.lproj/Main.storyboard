@@ -26,7 +26,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="iVr-EY-pc7" appends="YES" id="msR-sq-ygo"/>
+                                    <outletCollection property="gestureRecognizers" destination="iVr-EY-pc7" appends="YES" id="C9A-cq-xJo"/>
                                 </connections>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dx1-F2-qex">
@@ -34,28 +34,43 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Record"/>
                                 <connections>
-                                    <action selector="recordButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IMd-WF-X2g"/>
+                                    <action selector="recordAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZzH-hH-su3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vkn-sm-Sjr">
                                 <rect key="frame" x="233" y="220" width="74" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Picture"/>
+                                <state key="normal" title="Camera"/>
+                                <connections>
+                                    <action selector="getCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fc2-C1-ye0"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwH-hk-bli">
+                                <rect key="frame" x="67" y="164" width="240" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <outlet property="choosePicture" destination="Vkn-sm-Sjr" id="TZV-5Z-L2D"/>
-                        <outlet property="imageView" destination="1xM-XS-Fv5" id="Kul-IR-XHE"/>
+                        <outlet property="cameraButton" destination="Vkn-sm-Sjr" id="fo3-kO-25O"/>
+                        <outlet property="imageView" destination="1xM-XS-Fv5" id="hEF-PW-1XY"/>
+                        <outlet property="pageLabel" destination="vwH-hk-bli" id="W2o-PH-ycE"/>
                         <outlet property="playAudio" destination="iVr-EY-pc7" id="zJ3-0n-gbG"/>
-                        <outlet property="recordButton" destination="dx1-F2-qex" id="biq-UB-B2z"/>
+                        <outlet property="recordButton" destination="dx1-F2-qex" id="3AN-MY-VJz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="iVr-EY-pc7"/>
+                <tapGestureRecognizer id="iVr-EY-pc7">
+                    <connections>
+                        <action selector="tapDetected:" destination="BYZ-38-t0r" id="su0-gV-TZd"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="24.800000000000001" y="35.532233883058474"/>
+            <point key="canvasLocation" x="21.600000000000001" y="30.134932533733135"/>
         </scene>
     </scenes>
 </document>

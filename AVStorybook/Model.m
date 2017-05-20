@@ -8,22 +8,52 @@
 
 #import "Model.h"
 
+@interface Model()
+
+@property (nonatomic) NSURL *audioFilePath;
+@property (nonatomic) NSURL *imageFilePath;
+@property (nonatomic) int page;
+
+@end
+
 @implementation Model
 
--(instancetype)initWithIndex:(int)index{
+-(instancetype)init{
     if(self = [super init]){
-        
-        _pageIndex = index;
-        
-        NSString *audioURL = [NSString stringWithFormat:@"ProjectAudioFile%i.m4a", index];
-        
-        NSArray *pathComponents = [NSArray arrayWithObjects:
-                                   [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject], audioURL, nil];
-        
-        self.audioURL = [NSURL fileURLWithPathComponents:pathComponents];
+        _audioFilePath = [NSURL new];
+        _imageFilePath = [NSURL new];
+        _page = -1;
     }
     return self;
 }
 
+-(instancetype)initWith:(int)page{
+    if(self = [super init]){
+        _audioFilePath = [NSURL new];
+        _imageFilePath = [NSURL new];
+        _page = page;
+    }
+    return self;
+}
+
+-(void)setAudioFilePath:(NSURL *)audioFilePath{
+    _audioFilePath = audioFilePath;
+}
+
+-(void)setImageFilePath:(NSURL *)imageFilePath{
+    _imageFilePath = imageFilePath;
+}
+
+-(int)getPage{
+    return _page;
+}
+
+-(NSURL *)getAudioFilePath{
+    return _audioFilePath;
+}
+
+-(NSURL *)getImageFilePath{
+    return _imageFilePath;
+}
 
 @end
