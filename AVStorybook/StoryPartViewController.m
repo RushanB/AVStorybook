@@ -8,14 +8,14 @@
 
 #import "StoryPartViewController.h"
 
-@interface StoryPartViewController () <UIImagePickerControllerDelegate, AVAudioRecorderDelegate, UINavigationBarDelegate>
+@interface StoryPartViewController () 
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIButton *recordButton;
 @property (weak, nonatomic) IBOutlet UIButton *cameraButton;
 @property (weak, nonatomic) IBOutlet UILabel *pageLabel;
 
-@property (nonatomic) UIImagePickerController *imagePicker;
+@property (nonatomic, strong) UIImagePickerController *imagePicker;
 //@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *playAudio;
 
 @property (nonatomic) AVAudioSession *session;
@@ -96,14 +96,16 @@
     self.imagePicker.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:self.imagePicker.sourceType];
     [self presentViewController:self.imagePicker animated:NO completion:nil]; //present the view
 }
+
 - (IBAction)recordAudio:(UIButton *)sender {
     if([self.recordButton.titleLabel.text isEqualToString:@"Start Recording"]){
         [self.recordButton setTitle:@"Stop Recording" forState:UIControlStateNormal];
         
-        NSString *directoryPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, true)[0];
-        NSString *recordingnName = @"avstorybookaudio_";
-        recordingnName = [recordingnName stringByAppendingString:[NSString stringWithFormat:@"%i",[self.thisPage getPage]]];
-        NSArray *pathArray = @[directoryPath, recordingnName];
+        //document path
+        NSString *directoryPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, TRUE)[0];
+        NSString *recordingName = @"avstorybookaudio_";
+        recordingName = [recordingName stringByAppendingString:[NSString stringWithFormat:@"%i",[self.thisPage getPage]]];
+        NSArray *pathArray = @[directoryPath, recordingName];
         NSURL *filePath = [NSURL fileURLWithPathComponents:pathArray];
         
         self.session = [AVAudioSession sharedInstance];
@@ -118,6 +120,7 @@
         [recordSetting setValue:[NSNumber numberWithBool:NO] forKey:AVLinearPCMIsBigEndianKey];
         [recordSetting setValue:[NSNumber numberWithBool:NO] forKey:AVLinearPCMIsFloatKey];
         
+        //create recorder
         self.audioRecorder = [[AVAudioRecorder alloc] initWithURL:filePath settings:recordSetting error:nil];
         self.audioRecorder.delegate = self;
         self.audioRecorder.meteringEnabled = YES;

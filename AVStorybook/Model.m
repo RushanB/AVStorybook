@@ -36,12 +36,13 @@
     return self;
 }
 
--(void)setAudioFilePath:(NSURL *)audioFilePath{
-    _audioFilePath = audioFilePath;
-}
-
 -(void)setImageFilePath:(NSURL *)imageFilePath{
     _imageFilePath = imageFilePath;
+}
+
+
+-(void)setAudioFilePath:(NSURL *)audioFilePath{
+    _audioFilePath = audioFilePath;
 }
 
 -(int)getPage{

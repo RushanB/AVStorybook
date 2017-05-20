@@ -13,7 +13,7 @@
 @interface MyPageViewController () <UIPageViewControllerDelegate, UIPageViewControllerDataSource>
 
 @property(nonatomic) NSMutableArray *pageArray;
-@property (nonatomic) NSArray *storyViewArray;
+@property (nonatomic, strong) NSArray *storyViewArray;
 
 @end
 
@@ -35,9 +35,10 @@
     self.pageArray = [NSMutableArray new];
     
     for(int i=0; i<5 ; i++) {
-        Model *newModel = [[Model alloc] initWith:1];
-        [self.pageArray addObject:newModel];
+        Model *newPage = [[Model alloc] initWith:i];
+        [self.pageArray addObject:newPage];
     }
+    
     [s1 setThisPage:self.pageArray[0]];
     [self setViewControllers:@[self.storyViewArray[0]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:^(BOOL finished){
     }];
@@ -57,7 +58,6 @@
             return self.storyViewArray[currentPageN-1];
             break;
         }
-            break;
     }
     
 }
@@ -70,6 +70,7 @@
     switch (currentPageN) {
         case 0:
             return nil;
+            break;
         default:{
             Model *nextPage = [self.pageArray objectAtIndex:currentPageN+1];
             [self.storyViewArray[currentPageN+1] setThisPage:nextPage];

@@ -10,7 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "Model.h"
 
-@interface StoryPartViewController : UIViewController
+@interface StoryPartViewController : UIViewController <UIImagePickerControllerDelegate, AVAudioRecorderDelegate, UINavigationBarDelegate>
 
 @property (nonatomic) Model *thisPage;
 
