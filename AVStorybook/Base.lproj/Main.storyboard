@@ -22,9 +22,6 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" id="eO1-bx-gV3"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hpS-0M-b1c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -50,7 +47,7 @@
                                     <action selector="recordAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZzH-hH-su3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vkn-sm-Sjr">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="camera" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vkn-sm-Sjr">
                                 <rect key="frame" x="192" y="542" width="115" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Camera"/>
@@ -87,6 +84,7 @@
                 <tapGestureRecognizer id="iVr-EY-pc7">
                     <connections>
                         <action selector="tapDetected:" destination="BYZ-38-t0r" id="nGE-H0-zXQ"/>
+                        <outlet property="delegate" destination="1xM-XS-Fv5" id="s81-dc-E0W"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

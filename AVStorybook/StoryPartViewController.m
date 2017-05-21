@@ -38,6 +38,11 @@
         self.thisPage = [Model new]; //new model
     }
     self.pageLabel.text = [NSString stringWithFormat:@"%i", [self.thisPage getPage]];
+    
+    UIGestureRecognizer *imageTapped = [[UIGestureRecognizer alloc]initWithTarget:self action:@selector(tapDetected:)];
+    
+    self.imageView.userInteractionEnabled = YES;
+    [self.imageView addGestureRecognizer:imageTapped];
 
 }
 
@@ -80,6 +85,7 @@
     }else{
         self.audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:[self.thisPage getAudioFilePath] error:nil];
         [self.audioPlayer play];
+        NSLog(@"Playing Audio");
     }
 }
 - (IBAction)getCamera:(UIButton *)sender {
@@ -98,7 +104,8 @@
 }
 
 - (IBAction)recordAudio:(UIButton *)sender {
-    if([self.recordButton.titleLabel.text isEqualToString:@"Start Recording"]){
+    
+    if([self.recordButton.titleLabel.text isEqualToString:@"Record Audio"]){
         [self.recordButton setTitle:@"Stop Recording" forState:UIControlStateNormal];
         
         //document path
@@ -107,6 +114,7 @@
         recordingName = [recordingName stringByAppendingString:[NSString stringWithFormat:@"%i",[self.thisPage getPage]]];
         NSArray *pathArray = @[directoryPath, recordingName];
         NSURL *filePath = [NSURL fileURLWithPathComponents:pathArray];
+        
         
         self.session = [AVAudioSession sharedInstance];
         [self.session setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];

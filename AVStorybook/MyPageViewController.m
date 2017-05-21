@@ -35,7 +35,7 @@
     self.pageArray = [NSMutableArray new];
     
     for(int i=0; i<5 ; i++) {
-        Model *newPage = [[Model alloc] initWith:i];
+        Model *newPage = [[Model alloc] initWith:3];
         [self.pageArray addObject:newPage];
     }
     
@@ -52,6 +52,7 @@
     switch (currentPageN) {
         case 0:
             return nil;
+            break;
         default:{
             Model *prevPage = [self.pageArray objectAtIndex:currentPageN-1];
             [self.storyViewArray[currentPageN-1] setThisPage:prevPage];
